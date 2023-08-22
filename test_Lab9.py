@@ -1,40 +1,50 @@
-# Tests for Lab7
-# Print Largest & Smallest Value & Index in a List
+# Tests for Lab9
+# Check for Integer String
 
 import os.path
 import sys
-from Lab7 import main
+from Lab9 import main
 from tud_tests import *
 
-def test_Lab7():
+def test_Lab9():
 
     try:
-        exists = os.path.exists("Lab7.py")
+        exists = os.path.exists("Lab9.py")
         assert exists == True
     except:
         sys.exit()
 
     # Test 1
-    set_keyboard_input([])
+    set_keyboard_input(["1995"])
+    main()
+    output = get_display_output()
+
+    assert output == ["","yes"]
+
+
+    # Test 2
+    set_keyboard_input(["42,000"])
     main()
     output = get_display_output()
 
     assert output == [
-        "The highest sensor value read is at index 7 and is 99.77",
-        "The lowest sensor value read is at index 12 and is -88.42"
+        "","no"
         ]
-"""
-    # Test 2
-    sensor=[276.25, 185.45, -521.90, 99.34, 72.20, -65.90, 666.33, 99.77, 88.5,
-            -44.12, 45.75, 57.77, -88.42, 99.47, 75.75, 88.45, 65.64, 77.21, -24,62]
-    highSensor=findLargest(sensor) # calling findLargest and passing sensor list
-    lowSensor=findSmallest(sensor) # calling findSmallest and passing sensor list
-    print(f"The highest sensor value read is at index {highSensor[1]} and is {highSensor[0]}")
-    print(f"The lowest sensor value read is at index {lowSensor[1]} and is {lowSensor[0]}")
+
+    # Test 3
+    set_keyboard_input(["1995!"])
+    main()
     output = get_display_output()
 
     assert output == [
-        "The highest sensor value read is at index 6 and is 666.33",
-        "The lowest sensor value read is at index 2 and is -521.9"
+        "","no"
         ]
-"""
+
+    # Test 4
+    set_keyboard_input(["93875"])
+    main()
+    output = get_display_output()
+
+    assert output == [
+        "","yes"
+        ]
