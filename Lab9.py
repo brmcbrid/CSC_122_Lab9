@@ -1,9 +1,8 @@
 # CSC 122
-# Name Format
-# By <Your Name>
+# Integer String Checker
 
 """
-Inputs, Processes, Outputs (IOP)
+Inputs, Processes, Outputs (IPO)
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Input(s):
 Processes:
